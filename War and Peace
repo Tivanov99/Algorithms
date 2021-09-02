@@ -11,33 +11,54 @@ namespace Tests
     {
         static void Main(string[] args)
         {
+            Stopwatch stopWatch = new Stopwatch();
+
+            stopWatch.Start();
             string path = @"C:\Users\Trifon\Desktop\WarAndPeace.txt";
             char[] separators = new char[8] { '\r', '\n', ' ', ',', '-', '!', '?', '\t' };
 
+            string[] Text = TextReader(path, separators);
+            Dictionary<int, HashSet<string>> Words = TextIterator(Text);
+            FileWriter(Words);
+
+            stopWatch.Stop();
+            Console.WriteLine(stopWatch.Elapsed.Milliseconds);
+        }
+        public static string[] TextReader(string path, char[] separators)
+        {
+            string[] Text = File.ReadAllText(path).Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            return Text;
+        }
+        public static Dictionary<int, HashSet<string>> TextIterator(string[] Text)
+        {
             Dictionary<int, HashSet<string>> Words = new Dictionary<int, HashSet<string>>();
-            Stopwatch stopWatch = new Stopwatch();
-
-            string[] Text = File.ReadAllText(path).Split(separators);
-
-            stopWatch.Start();
             for (int i = 0; i < Text.Length; i++)
             {
                 int currWordLenght = Text[i].Length;
-
                 if (!Words.Keys.Contains(currWordLenght))
                 {
-                    Words.Add(currWordLenght, new HashSet<string>());
-                    Words[currWordLenght].Add(Text[i]);
+                    AddNewPath(Words, currWordLenght);
+                    AddWord(Words, Text[i], currWordLenght);
                     continue;
                 }
-                Words[currWordLenght].Add(Text[i]);
+                AddWord(Words, Text[i], currWordLenght);
             }
+            return Words;
+        }
+        public static void AddWord(Dictionary<int, HashSet<string>> Words, string word, int pathNum)
+        {
+            Words[pathNum].Add(word);
+        }
+        public static void AddNewPath(Dictionary<int, HashSet<string>> Words, int pathNum)
+        {
+            Words.Add(pathNum, new HashSet<string>());
+        }
+        public static void FileWriter(Dictionary<int, HashSet<string>> Words)
+        {
             foreach (int item in Words.Keys)
             {
                 File.WriteAllLines(@$"C:\Users\Trifon\Desktop\Words\{item}.txt", Words[item]);
             }
-            stopWatch.Stop();
-            Console.WriteLine(stopWatch.Elapsed.Milliseconds);
         }
     }
 }
