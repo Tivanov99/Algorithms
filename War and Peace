@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Tests
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = @"C:\Users\Trifon\Desktop\WarAndPeace.txt";
+            char[] separators = new char[8] { '\r', '\n', ' ', ',', '-', '!', '?', '\t' };
+
+            Dictionary<int, HashSet<string>> Words = new Dictionary<int, HashSet<string>>();
+            Stopwatch stopWatch = new Stopwatch();
+
+            string[] Text = File.ReadAllText(path).Split(separators);
+
+            stopWatch.Start();
+            for (int i = 0; i < Text.Length; i++)
+            {
+                int currWordLenght = Text[i].Length;
+
+                if (!Words.Keys.Contains(currWordLenght))
+                {
+                    Words.Add(currWordLenght, new HashSet<string>());
+                    Words[currWordLenght].Add(Text[i]);
+                    continue;
+                }
+                Words[currWordLenght].Add(Text[i]);
+            }
+            foreach (int item in Words.Keys)
+            {
+                File.WriteAllLines(@$"C:\Users\Trifon\Desktop\Words\{item}.txt", Words[item]);
+            }
+            stopWatch.Stop();
+            Console.WriteLine(stopWatch.Elapsed.Milliseconds);
+        }
+    }
+}
