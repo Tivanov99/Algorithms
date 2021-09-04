@@ -1,0 +1,30 @@
+using System;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+            // Write a C# Sharp program to remove the character in
+            // a given position of a given string. The given position will be
+            // in the range 0.. string length -1 inclusive
+        }
+        public static void InputReader()
+        {
+            string [] n = Console.ReadLine().Split(", ");
+            OuputPrinter(n);
+        }
+        public static string CalculateResult(string [] n)
+        {
+            int possiton= int.Parse(n[1]);
+            return new StringBuilder(n[0]).Remove(possiton, 1).ToString();
+        }
+        public static void OuputPrinter(string [] n)
+        {
+            Console.WriteLine(CalculateResult(n));
+        }
+    }
+}
