@@ -1,0 +1,26 @@
+using System;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+        }
+        public static void InputReader()
+        {
+            int first = int.Parse(Console.ReadLine());
+            int second = int.Parse(Console.ReadLine());
+            OuputPrinter(first, second);
+        }
+        public static bool CalculateResult(int first, int second)
+        {
+            return first == 30 || second == 30 || first + second == 30 ? true : false;
+        }
+        public static void OuputPrinter(int first, int second)
+        {
+            Console.WriteLine(CalculateResult(first, second));
+        }
+    }
+}
