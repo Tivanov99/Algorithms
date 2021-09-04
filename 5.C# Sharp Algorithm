@@ -1,0 +1,28 @@
+using System;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+            //5. Write a C# Sharp program to create a new string where 'if'
+            //is added to the front of a given string.
+            //If the string already begins with 'if', return the string unchanged.
+        }
+        public static void InputReader()
+        {
+            string n = (Console.ReadLine());
+            OuputPrinter(n);
+        }
+        public static string CalculateResult(string n)
+        {
+            return n.Substring(0, 2) == "if" ? n : "if " +n;
+        }
+        public static void OuputPrinter(string n)
+        {
+            Console.WriteLine(CalculateResult(n));
+        }
+    }
+}
