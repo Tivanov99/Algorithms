@@ -1,0 +1,29 @@
+using System;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+            //9. Write a C# Sharp program to create a new string with the last
+            //char added at the front and back of a given string of length 1 or more.
+        }
+        public static void InputReader()
+        {
+            string n = Console.ReadLine();
+            OuputPrinter(n);
+        }
+        public static void OuputPrinter(string n)
+        {
+            Console.WriteLine(Editor(n));
+        }
+        public static string Editor(string str)
+        {
+            string lastChar = str.Substring(str.Length - 1);
+            return lastChar + str + lastChar;
+        }
+    }
+}
