@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+            //1.Simple Array Sum
+        }
+        public static void InputReader()
+        {
+            int count = int.Parse(Console.ReadLine());
+            int[] n = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+            OuputPrinter(n);
+        }
+        public static void OuputPrinter(int[] n)
+        {
+            Console.WriteLine(GetSum(n));
+        }
+        public static int GetSum(int[] n)
+        {
+            return n.Sum();
+        }
+    }
+}
