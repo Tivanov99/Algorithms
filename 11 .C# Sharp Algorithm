@@ -1,0 +1,33 @@
+using System;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InputReader();
+            //11. Write a C# Sharp program to create a new string taking the first
+            //3 characters of a given string and return the string with the 3 characters
+            //added at both the front and back.
+            //If the given string length is less than 3, use whatever characters are there.
+        }
+        public static void InputReader()
+        {
+            string str = Console.ReadLine();
+            OuputPrinter(str);
+        }
+        public static void OuputPrinter(string n)
+        {
+            Console.WriteLine(Editor(n));
+        }
+        public static string Editor(string n)
+        {
+            string firstSymbs = n.Length >= 3
+                ? n.Substring(0, 3) : n;
+
+            return firstSymbs + n + firstSymbs;
+        }
+    }
+}
