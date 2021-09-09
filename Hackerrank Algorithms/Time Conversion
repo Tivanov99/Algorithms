@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            
+            Console.WriteLine(DateTime.Parse(input).ToString("HH:mm:ss"));
+        }
+    }
+}
