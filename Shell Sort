@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[] { 29, 10, 14, 37, 14 };
+            Console.WriteLine(string.Join(" ", ShellSort(array)));
+        }
+        static int[] ShellSort(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int s = 0; s < arr.Length - 1 - i; s++)
+                {
+                    if (arr[s] > arr[s + 1])
+                    {
+                        int temp = arr[s];
+                        arr[s] = arr[s + 1];
+                        arr[s + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+    }
+}
