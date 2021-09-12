@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[] { 29, 10, 14, 37, 14 };
+            QuickSort(array, 0, array.Length-1);
+        }
+        static void QuickSort(int[] input, int left, int right)
+        {
+            if (left < right)
+            {
+                int pivot = Partition(input, left, right);
+                if (pivot > 1)
+                {
+                    QuickSort(input, left, right - 1);
+                }
+                if (pivot + 1 < right)
+                {
+                    QuickSort(input, pivot + 1, right);
+                }
+            }
+        }
+        static int Partition(int[] arr, int left, int right)
+        {
+            int pivot = arr[left];
+            while (true)
+            {
+                while (left < right)
+                {
+                    left++;
+                }
+                while (arr[right] > pivot)
+                {
+                    right--;
+                }
+                if (left < right)
+                {
+                    if (arr[left] == arr[right])
+                    {
+                        return right;
+                    }
+                    int temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
+                }
+                else
+                {
+                    return right;
+                }
+            }
+        }
+
+    }
+}
