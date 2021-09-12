@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[] { 37,,68 10, -1, 14, 6, 37, 14 };
+            Console.WriteLine(string.Join(" ", Bubble(array)));
+        }
+        static int[] Bubble(int[] array)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int y = 0; y < arr.Length - 1 - i; y++)
+                {
+                    if (arr[y] > arr[y + 1])
+                    {
+                        int temp = arr[y];
+                        arr[y] = arr[y + 1];
+                        arr[y + 1] = temp;
+                    }
+                }
+            }
+            return array;
+        }
+    }
+}
