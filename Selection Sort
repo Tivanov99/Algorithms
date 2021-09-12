@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Basic_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[] { 29, 10, 14, 37, 14 };
+            Console.WriteLine(string.Join(" ", SelectionSort(array)));
+        }
+        static int[] SelectionSort(int[] input)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                int minIndex = i;
+                for (int y = i; y < input.Length; y++)
+                {
+                    if (input[minIndex] > input[y])
+                    {
+                        minIndex = y;
+                    }
+                }
+                int temp = input[i];
+                input[i] = input[minIndex];
+                input[minIndex] = temp;
+            }
+            return input;
+        }
+    }
+}
