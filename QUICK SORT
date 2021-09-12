@@ -10,7 +10,8 @@ namespace Basic_Algorithm
         static void Main(string[] args)
         {
             int[] array = new int[] { 29, 10, 14, 37, 14 };
-            QuickSort(array, 0, array.Length-1);
+            QuickSort(array, 0, array.Length - 1);
+            Console.WriteLine(string.Join(" ", array));
         }
         static void QuickSort(int[] input, int left, int right)
         {
@@ -32,14 +33,17 @@ namespace Basic_Algorithm
             int pivot = arr[left];
             while (true)
             {
-                while (left < right)
+                while (arr[left] < pivot)
                 {
                     left++;
                 }
+
+
                 while (arr[right] > pivot)
                 {
                     right--;
                 }
+
                 if (left < right)
                 {
                     if (arr[left] == arr[right])
@@ -56,6 +60,5 @@ namespace Basic_Algorithm
                 }
             }
         }
-
     }
 }
