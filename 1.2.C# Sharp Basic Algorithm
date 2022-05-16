@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Difference(51));
+        }
+        public static int Difference(int x)
+        {
+            return x > 51 ? (x - 51) * 3 : 51 - x;
+        }
+    }
+}
