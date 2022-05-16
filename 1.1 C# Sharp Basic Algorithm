@@ -1,34 +1,17 @@
 using System;
 
-namespace Basic_Algorithm
+namespace Opp_Train
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            InputReader();
+
+            Console.WriteLine(Sum(3,2));
         }
-        public static void InputReader()
+        public static int Sum(int f, int s)
         {
-            int first = int.Parse(Console.ReadLine());
-            int second = int.Parse(Console.ReadLine());
-            CalculateResult(first, second);
-        }
-        public static bool IsTheSame(int first, int second)
-        {
-            if (first == second)
-            {
-                return true;
-            }
-            return false;
-        }
-        public static void CalculateResult(int first, int second)
-        {
-            OuputPrinter(first == second ? (first + second) * 3:first + second);
-        }
-        public static void OuputPrinter(int sum)
-        {
-            Console.WriteLine(sum);
+            return f == s ? (f+s)*3 : f + s;
         }
     }
 }
