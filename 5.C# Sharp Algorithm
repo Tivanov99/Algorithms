@@ -1,28 +1,21 @@
 using System;
 
-namespace Basic_Algorithm
+namespace Opp_Train
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            InputReader();
-            //5. Write a C# Sharp program to create a new string where 'if'
-            //is added to the front of a given string.
-            //If the string already begins with 'if', return the string unchanged.
+            Console.WriteLine(Difference(""));
         }
-        public static void InputReader()
+        public static string Difference(string x)
         {
-            string n = (Console.ReadLine());
-            OuputPrinter(n);
-        }
-        public static string CalculateResult(string n)
-        {
-            return n.Substring(0, 2) == "if" ? n : "if " +n;
-        }
-        public static void OuputPrinter(string n)
-        {
-            Console.WriteLine(CalculateResult(n));
+            if(x.Length >= 2 && x.Substring(0, 2) == "if")
+            {
+                return x;
+                
+            }
+            return "if " + x;
         }
     }
 }
