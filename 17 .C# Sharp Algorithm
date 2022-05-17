@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Contains("Python"));
+        }
+        public static string Contains(string x)
+        {
+            return x.Substring(1, 2) == "yt" ? x.Remove(1, 2) : x;
+        }
+    }
+}
