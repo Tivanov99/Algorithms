@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Concat(20,94));
+        }
+        public static bool Concat(int x ,int y)
+        {
+            return (x <= 20 && y >= 50) || (y <= 20 && x >= 50) ;
+        }
+    }
+}
