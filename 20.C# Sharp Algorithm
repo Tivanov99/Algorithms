@@ -1,0 +1,17 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Range(55, 60));
+        }
+        public static bool Range (int x, int y)
+        {
+            return (x >= 40 && x <= 50) && (y >= 40 && y <= 50) ? true :
+                    ((x >= 50 && x <= 60) && (y >= 50 && y <= 60) ? true : false);
+        }
+    }
+}
