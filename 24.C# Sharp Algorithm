@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MakeItUpper("PHP"));
+        }
+        public static string MakeItUpper (string x)
+        {
+            return x.Length > 3 ? x.Remove(x.Length - 3) + x.Substring(x.Length - 3, 3).ToUpper() : x.ToUpper();
+        }
+    }
+}
