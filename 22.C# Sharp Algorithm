@@ -1,0 +1,24 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(ContainsCount("frizz"));
+        }
+        public static bool ContainsCount (string x)
+        {
+            string temp = x;
+            while (temp.Contains("z"))
+            {
+                int index = x.IndexOf("z");
+                temp = temp.Remove(index,1);
+            }
+            int diff = Math.Abs(x.Length - temp.Length);
+
+            return diff >=2 && diff <= 4;
+        }
+    }
+}
