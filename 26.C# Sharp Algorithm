@@ -1,0 +1,23 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MakeCopies("JSS", 3));
+        }
+        public static string MakeCopies(string x, int copies)
+        {
+            int frontStrings = x.Length > 3 ? 3 : x.Length;
+            string firstChars = x.Substring(0, frontStrings);
+            string temp = string.Empty;
+            for (int i = 0; i < copies; i++)
+            {
+                temp += firstChars;
+            }
+            return temp;
+        }
+    }
+}
