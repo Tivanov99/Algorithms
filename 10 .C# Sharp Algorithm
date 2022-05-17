@@ -1,28 +1,16 @@
 using System;
-using System.Text;
 
-namespace Basic_Algorithm
+namespace Opp_Train
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            InputReader();
-            //10. Write a C# Sharp program to check if a given positive number is
-            // a multiple of 3 or a multiple of 7
+            Console.WriteLine(Concat(37));
         }
-        public static void InputReader()
+        public static bool Concat(int input)
         {
-            int n = int.Parse(Console.ReadLine());
-            OuputPrinter(n);
-        }
-        public static void OuputPrinter(int n)
-        {
-            Console.WriteLine(Editor(n));
-        }
-        public static bool Editor(int n)
-        {
-            return n % 3 == 0 || n % 7 == 0 ? true : false;
+            return input % 3 == 0 || input % 7 == 0;
         }
     }
 }
