@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SameLastNumber(12,512));
+        }
+        public static bool SameLastNumber (int x, int y)
+        {
+            return x>0 && y>0 ? x % 10 == y % 10 : false;
+        }
+    }
+}
