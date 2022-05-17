@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Compare(28, 28));
+        }
+        public static int Compare (int x, int y)
+        {
+            return (x >= 20 && x <= 30) && (y >= 20 && y <= 30) ? (x > y ? x : y) : 0;
+        }
+    }
+}
