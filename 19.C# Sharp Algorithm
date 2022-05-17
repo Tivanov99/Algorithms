@@ -1,0 +1,18 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(BiggestBetweenThree(1, 2));
+        }
+        public static int BiggestBetweenThree(int x, int y)
+        {
+            int first = Math.Abs(100 - x);
+            int second = Math.Abs(100 - y);
+            return first == second ? 0 : (first>second ? y : x);
+        }
+    }
+}
