@@ -1,33 +1,16 @@
 using System;
-using System.Text;
 
-namespace Basic_Algorithm
+namespace Opp_Train
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            InputReader();
-            //8. Write a C# Sharp program to create a new string which is 4 copies
-            //of the 2 front characters of a given string.
-            //If the given string length is less than 2 return the original string.
+            Console.WriteLine(Swap("abcd"));
         }
-        public static void InputReader()
+        public static string Swap(string input)
         {
-            string n = Console.ReadLine();
-            OuputPrinter(n);
-        }
-        public static void OuputPrinter(string n)
-        {
-            Console.WriteLine(n.Length >= 2 ? Copier(n) : n);
-        }
-        public static string Copier(string str)
-        {
-            string NewString = "";
-            NewString = str.Substring(0, 2);
-            NewString += NewString;
-            NewString += NewString;
-            return NewString;
+            return input.Length > 2 ? input.Substring(0, 2) + input.Substring(0, 2) + input.Substring(0, 2) + input.Substring(0, 2) : input;
         }
     }
 }
