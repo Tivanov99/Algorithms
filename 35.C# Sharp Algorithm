@@ -1,0 +1,45 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Compare("abcde", "osuefrcd"));
+        }
+        public static int Compare(string firstStr, string secondStr)
+        {
+            int count = 0;
+            for (int i = 0; i < firstStr.Length; i++)
+            {
+                if (i + 1 < firstStr.Length)
+                {
+                    string fSubString = firstStr.Substring(i, 2);
+
+                    for (int s = 0; s < secondStr.Length; s++)
+                    {
+                        if (s + 1 < secondStr.Length)
+                        {
+                            string sSubString = secondStr.Substring(s, 2);
+                            if (fSubString == sSubString)
+                            {
+                                count++;
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    return count;
+                }
+            }
+            return count;
+        }
+    }
+}
