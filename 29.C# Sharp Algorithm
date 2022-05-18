@@ -1,0 +1,22 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Contains("Python"));
+        }
+        public static string Contains(string x)
+        {
+            string result = x.Substring(0, 1);
+
+            for (int i = 2; i < x.Length; i+=2)
+            {
+                result += x.Substring(i, 1);
+            }
+            return result;
+        }
+    }
+}
