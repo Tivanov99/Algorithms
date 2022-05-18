@@ -1,0 +1,26 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(CountOfSubString("abcdsab"));
+        }
+        public static int CountOfSubString(string x)
+        {
+            string lastSub = x.Substring(x.Length - 2, 2);
+            int count = 0;
+
+            for (int i = 0; i < x.Length-2; i++)
+            {
+               if(x.Substring(i, 2) == lastSub)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
+}
