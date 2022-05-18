@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Compare("xxHxix", "x"));
+        }
+        public static string Compare(string value, string removed)
+        {
+            for (int i = 1; i < value.Length - 2; i++)
+            {
+                if(value.Substring(i,1) == removed)
+                {
+                    value = value.Remove(i, 1);
+                }
+            }
+            return value;
+        }
+    }
+}
