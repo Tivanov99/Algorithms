@@ -1,0 +1,34 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SubAray(new int [] { 1, 2, 3,5 }));
+        }
+        public static bool SubAray(int [] array)
+        {
+            int[] compareArray = new int[] { 1, 2, 3 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                if(i+2 < array.Length)
+                {
+                    int[] currentSubArray = new int[] { array[i], array[i+1], array[i+2] };
+
+                    if (Enumerable.SequenceEqual(currentSubArray,compareArray))
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return false ;
+        }
+    }
+}
