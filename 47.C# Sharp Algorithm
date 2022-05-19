@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(4, 5, 6));
+        }
+        public static bool Test(int x , int y, int n)
+        {
+            return x + y == n || y + n == x || n + x == y ? true : false;
+        }
+    }
+}
