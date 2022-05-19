@@ -1,0 +1,18 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(4, 5));
+        }
+        public static int Test(int x, int y)
+        {
+            int sumLength = (x + y).ToString().Length;
+            int xLenght = x.ToString().Length;
+            return sumLength == xLenght ? x + y : x;
+        }
+    }
+}
