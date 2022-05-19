@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(12, 12, 18));
+        }
+        public static int Test(int x, int y, int z)
+        {
+            return x == y ? z : (x == z ? y : x + y + z);
+        }
+    }
+}
