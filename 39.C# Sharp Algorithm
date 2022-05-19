@@ -1,0 +1,28 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsTrippleExists(new int [] { 1, 1, 1, 2, 2, 2, 1 }));
+
+        }
+        public static bool IsTrippleExists(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i + 2 < array.Length)
+                {
+                    if(array[i] == array[i + 1] && array[i+2] == array[i])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+    }
+}
