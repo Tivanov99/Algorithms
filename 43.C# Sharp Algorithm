@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(7));
+        }
+        public static bool Test(int num1)
+        {
+            return num1 % 3 == 0 || num1 % 7 == 0 && !(num1 % 3 == 0 && num1 % 7 == 0) ? true : false;
+        }
+    }
+}
