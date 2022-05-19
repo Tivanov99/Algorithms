@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(11, 22, 33));
+        }
+        public static bool Test(int x, int y, int z)
+        {
+            int xLast = x % 10;
+            int yLast = y % 10;
+            int zLast = z % 10;
+
+            return 
+                (xLast == yLast) ? true :
+                (xLast == zLast)? true : 
+                (yLast==zLast)? true : false;
+        }
+    }
+}
