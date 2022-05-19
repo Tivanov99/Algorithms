@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(10, 10));
+        }
+        public static bool Test(int x, int y)
+        {
+            return x / 10 == y / 10 || x / 10 == y % 10 || x % 10 == y % 10 || y / 10 == x % 10;
+        }
+    }
+}
