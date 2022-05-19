@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(3, 7));
+        }
+        public static int Test(int x, int y)
+        {
+            return (x >= 10 && x <= 20) || (y >= 1 && y <= 20) ? 18 : x + y;
+        }
+    }
+}
