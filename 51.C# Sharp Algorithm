@@ -1,0 +1,17 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(11, 21, 31));
+        }
+        public static bool Test(int x, int y, int z)
+        {
+            return Math.Abs(x - y) >= 20 || Math.Abs(y - z) >= 20
+                || Math.Abs(x - z) >= 20 ? true : false;
+        }
+    }
+}
