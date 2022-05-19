@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Difference(15,10));
+        }
+        public static bool Difference(int num1, int num2)
+        {
+            return num1 == 5 || num2 == 5 || num1 + num2 == 5 || Math.Abs(num1 - num2) == 5 ? true : false;
+        }
+    }
+}
