@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(7));
+        }
+        public static bool Test(int n)
+        {
+            return n % 10 <= 2 || n % 10 >= 8;
+        }
+    }
+}
