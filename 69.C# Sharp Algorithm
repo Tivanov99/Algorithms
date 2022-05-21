@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test("Hello"));
+        }
+        public static string Test(string l)
+        {
+            return l.Length >= 2 ? l.Substring(l.Length - 2, 2) + l.Substring(0, l.Length - 2) : l;
+        }
+    }
+}
