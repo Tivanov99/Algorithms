@@ -1,0 +1,23 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(17, 33));
+        }
+        public static int Test(int x, int y)
+        {
+            if(x > 13 || y > 13)
+            {
+                return 0;
+            }
+           int xNearlest = Math.Abs(13 - x);
+           int yNearlest = Math.Abs(13 - y);
+
+            return xNearlest < yNearlest ? x : y;
+        }
+    }
+}
