@@ -1,0 +1,19 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test(10, 13, 12));
+        }
+        public static int Test(int x, int y, int z)
+        {
+            x = x >= 10 && x <= 20 && x!= 13 && x !=17 ? 0 : x;
+            y = y >= 10 && y <= 20 && y != 13 && y != 17 ? 0 : y;
+            z = z >= 10 && z <= 20 && z != 13 && z != 17 ?  0 : z;
+            return x + y + z;
+        }
+    }
+}
