@@ -1,0 +1,16 @@
+using System;
+
+namespace Opp_Train
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Test("Hi", "Hello"));
+        }
+        public static string Test(string s1, string s2)
+        {
+            return s1 + s2 + s2 + s1;
+        }
+    }
+}
